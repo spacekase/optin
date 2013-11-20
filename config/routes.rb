@@ -1,4 +1,7 @@
 Optin::Application.routes.draw do
+
+  root 'companies#index'
+
   # Routes for the Application resource:
   # CREATE
   get '/applications/new', controller: 'applications', action: 'new', as: 'new_application'
