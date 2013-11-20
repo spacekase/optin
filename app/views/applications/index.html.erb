@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Applications</h1>
+</div>
+
+<p><%= link_to 'Add a New Application', new_application_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Job</th>
+      <th>Mom</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applications.each do |application| %>
+      <tr>
+        <td><%= application.job_id %></td>
+        <td><%= application.mom_id %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, application_url(application), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_application_url(application), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, application_url(application), method: 'delete', data: { confirm: "Do you really want to delete this application?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

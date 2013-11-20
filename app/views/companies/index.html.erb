@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Companies</h1>
+</div>
+
+<p><%= link_to 'Add a New Company', new_company_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Overview</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.email %></td>
+        <td><%= company.website %></td>
+        <td><%= company.city %></td>
+        <td><%= company.state %></td>
+        <td><%= company.zip %></td>
+        <td><%= company.overview %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, company_url(company), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_company_url(company), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, company_url(company), method: 'delete', data: { confirm: "Do you really want to delete this company?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

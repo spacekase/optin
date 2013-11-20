@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>Moms</h1>
+</div>
+
+<p><%= link_to 'Add a New Mom', new_mom_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Years experience</th>
+      <th>Email</th>
+      <th>College</th>
+      <th>Mba</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moms.each do |mom| %>
+      <tr>
+        <td><%= mom.first_name %></td>
+        <td><%= mom.last_name %></td>
+        <td><%= mom.years_experience %></td>
+        <td><%= mom.email %></td>
+        <td><%= mom.college %></td>
+        <td><%= mom.mba %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, mom_url(mom), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_mom_url(mom), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, mom_url(mom), method: 'delete', data: { confirm: "Do you really want to delete this mom?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

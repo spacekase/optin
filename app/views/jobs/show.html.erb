@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h1>Job #<%= @job.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Company</dt>
+  <dd><%= @job.company_id %></dd>
+
+  <dt>Title</dt>
+  <dd><%= @job.title %></dd>
+
+  <dt>Industry</dt>
+  <dd><%= @job.industry %></dd>
+
+  <dt>Function</dt>
+  <dd><%= @job.function %></dd>
+
+  <dt>Budget</dt>
+  <dd><%= @job.budget %></dd>
+
+  <dt>Description</dt>
+  <dd><%= @job.description %></dd>
+
+  <dt>Location</dt>
+  <dd><%= @job.location %></dd>
+
+  <dt>Start date</dt>
+  <dd><%= @job.start_date %></dd>
+
+  <dt>End date</dt>
+  <dd><%= @job.end_date %></dd>
+
+  <dt>Hours per week</dt>
+  <dd><%= @job.hours_per_week %></dd>
+
+  <dt>Status</dt>
+  <dd><%= @job.status? %></dd>
+
+</dl>
