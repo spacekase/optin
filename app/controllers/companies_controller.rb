@@ -55,4 +55,6 @@ class CompaniesController < ApplicationController
 
     redirect_to companies_url, notice: "Company deleted."
   end
+
+
 end

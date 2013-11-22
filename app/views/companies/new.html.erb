@@ -13,7 +13,7 @@
   <div class="form-group">
     <%= label_tag :email, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :email, nil, class: 'form-control' %>
+      <%= email_field_tag :email, nil, class: 'form-control' %>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
   <div class="form-group">
     <%= label_tag :state, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :state, nil, class: 'form-control' %>
+      <%= select_tag :state, class: 'us_states' %>
     </div>
   </div>
 

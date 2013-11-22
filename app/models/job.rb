@@ -4,6 +4,6 @@ class Job < ActiveRecord::Base
 
 	has_many :applications
 
-	has_many :moms, through => :applications
+	has_many :moms, :through => :applications
 
 end
