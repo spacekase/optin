@@ -13,7 +13,9 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new
-    @job.company_id = params[:company_id]
+    
+    
+
     @job.title = params[:title]
     @job.industry = params[:industry]
     @job.function = params[:function]
