@@ -1,5 +1,6 @@
 Optin::Application.routes.draw do
 
+  devise_for :moms
   root 'companies#index'
 
   # Routes for the Application resource:
