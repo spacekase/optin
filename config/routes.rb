@@ -1,5 +1,6 @@
 Optin::Application.routes.draw do
 
+  devise_for :companies
   devise_for :moms
   root 'companies#index'
 
