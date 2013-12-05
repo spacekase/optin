@@ -26,6 +26,7 @@ class JobsController < ApplicationController
     @job.end_date = params[:end_date]
     @job.hours_per_week = params[:hours_per_week]
     @job.status = params[:status]
+    @job.company_id = current_company.id
 
     if @job.save
       redirect_to jobs_url, notice: "Job created successfully."
@@ -51,6 +52,7 @@ class JobsController < ApplicationController
     @job.end_date = params[:end_date]
     @job.hours_per_week = params[:hours_per_week]
     @job.status = params[:status]
+    @job.company_id = current_company.id
 
     if @job.save
       redirect_to jobs_url, notice: "Job updated successfully."
