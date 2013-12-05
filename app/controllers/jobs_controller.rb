@@ -64,5 +64,7 @@ class JobsController < ApplicationController
     @job.destroy
 
     redirect_to jobs_url, notice: "Job deleted."
+
+    
   end
 end
