@@ -13,9 +13,6 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new
-    
-    
-
     @job.title = params[:title]
     @job.industry = params[:industry]
     @job.function = params[:function]
