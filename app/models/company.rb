@@ -5,4 +5,8 @@ class Company < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :jobs
+
+	def name
+		return company_name
+	end	
 end

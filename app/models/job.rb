@@ -6,6 +6,7 @@ class Job < ActiveRecord::Base
 
 	has_many :moms, :through => :applications
 
-	validates :company_id, :presence => true
+	validates :company, :presence => true
+
 
 end
