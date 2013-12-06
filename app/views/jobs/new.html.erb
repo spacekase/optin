@@ -5,7 +5,7 @@
 <%= form_tag(jobs_url, method: 'post', class: 'form-horizontal') do %>
 
 <div class="form-group">
-    <%= label_tag :company_id, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag :company_name, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
       <select name="company_id" class="form-control">
         <% Company.all.each do |company| %>

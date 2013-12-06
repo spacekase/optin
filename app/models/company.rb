@@ -6,7 +6,5 @@ class Company < ActiveRecord::Base
 
 	has_many :jobs
 
-	def name
-		return company_name
-	end	
+	
 end
