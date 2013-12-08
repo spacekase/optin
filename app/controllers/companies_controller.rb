@@ -57,8 +57,7 @@ class CompaniesController < ApplicationController
   end
 
 def us_states
-  @us_states = 
-   
+
   [
     ['AK', 'AK'],
     ['AL', 'AL'],
