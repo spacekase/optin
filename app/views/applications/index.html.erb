@@ -18,7 +18,7 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
-        <td><%= application.job_id %></td>
+        <td><%= application.job.title %></td>
         <td><%= application.mom_id %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, application_url(application), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_application_url(application), class: 'btn btn-warning' %></td>

@@ -40,7 +40,7 @@
  
 <%= form_tag(applications_url, method: 'post', class: 'form-horizontal') do %>
 
-  <%= hidden_field_tag :job_id, params[:id] %>  
+  <%= hidden_field_tag :job_id, @job.id %>  
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">
