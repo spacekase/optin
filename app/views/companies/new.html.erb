@@ -34,7 +34,7 @@
   <div class="form-group">
     <%= label_tag :state, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= select_tag :state, class: 'us_states' %>
+      <%= select_tag :state, options_for_select(:us_states) %>
     </div>
   </div>
 

@@ -8,5 +8,8 @@ class Mom < ActiveRecord::Base
 
 	has_many :jobs, :through => :applications
 
+  	def full_name
+    	return first_name + " " + last_name
+  	end
 	
 end
