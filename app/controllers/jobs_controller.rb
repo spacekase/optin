@@ -6,6 +6,8 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find_by(id: params[:id])
+    #@application = Application.new
+    #@application.mom_id = current_mom.id
   end
 
   def new

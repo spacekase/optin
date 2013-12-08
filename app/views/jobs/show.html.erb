@@ -36,11 +36,18 @@
   <dt>Status</dt>
   <dd><%= @job.status? %></dd>
 
+</dl>
+ 
+<%= form_tag(applications_url, method: 'post', class: 'form-horizontal') do %>
+
+  <%= hidden_field_tag :job_id, params[:id] %>  
+
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">
-      <%= submit_tag "Apply", class: 'btn btn-primary' %>
+      <%= submit_tag "Apply for this Job", class: 'btn btn-primary' %>
     </div>
   </div>
+<% end %>
 
 
-</dl>
+

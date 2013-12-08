@@ -14,7 +14,8 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new
     @application.job_id = params[:job_id]
-    @application.mom_id = params[:mom_id]
+    @application.mom_id = current_mom.id
+    
 
     if @application.save
       redirect_to applications_url, notice: "Application created successfully."
