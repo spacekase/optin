@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Editing Application #<%= @application.id %></h1>
+  <h1>Editing Application #<%= @application.job.title %></h1>
 </div>
 
 <%= form_tag(application_url(@application), method: 'patch', class: 'form-horizontal') do %>

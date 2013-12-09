@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Editing Mom #<%= @mom.id %></h1>
+  <h1>Editing <%= @mom.full_name %></h1>
 </div>
 
 <%= form_tag(mom_url(@mom), method: 'patch', class: 'form-horizontal') do %>
