@@ -40,15 +40,29 @@
  
 
 
-<%= form_tag(applications_url, method: 'post', class: 'form-horizontal') do %>
+<% if mom_signed_in? %>
+  <%= form_tag(applications_url, method: 'post', class: 'form-horizontal') do %>
 
-  <%= hidden_field_tag :job_id, @job.id %>  
+    <%= hidden_field_tag :job_id, @job.id %>  
 
-  <div class="form-group">
-    <div class="col-md-offset-2 col-md-6">
-      <%= submit_tag "Apply for this Job", class: 'btn btn-primary' %>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-6">
+        <%= submit_tag "Apply for this Job", class: 'btn btn-primary' %>
+      </div>
     </div>
-  </div>
+  <% end %>
+<% elsif company_signed_in? %>
+  <%= form_tag(applications_url, method: 'get', class: 'form-horizontal') do %>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-6">
+        <%= submit_tag "See all Applications for this Job", class: 'btn btn-primary' %>
+      </div>
+    </div>  
+<% end %>
+<% else %>
+  <li><%= link_to "Sign up as Company", new_company_registration_path %></li>
+    
 <% end %>
 
 

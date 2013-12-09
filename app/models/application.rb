@@ -4,4 +4,6 @@ class Application < ActiveRecord::Base
 
 	belongs_to :mom
 
+
+	validates :job, :presence => true
 end

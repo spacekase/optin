@@ -3,6 +3,14 @@ class JobsController < ApplicationController
   before_action(:find_job, :only => [:show, :edit, :update, :destroy])
   before_action(:authenticate_company!, :only => [:new, :edit, :update, :destroy])
 
+  before_action :someone_must_be_signed_in, :only => [:index]
+
+  def someone_must_be_signed_in
+      unless mom_signed_in? || company_signed_in?
+        redirect_to root_url, :notice => "You must be signed in to view jobs."
+      end
+  end
+
   def find_job
     @job = Job.find(params[:id])
   end

@@ -1,8 +1,9 @@
 Optin::Application.routes.draw do
 
+  get "pages/landing"
   devise_for :companies
   devise_for :moms
-  root 'companies#index'
+  root 'pages#landing'
 
   # Routes for the Application resource:
   # CREATE

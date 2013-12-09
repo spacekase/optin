@@ -1,5 +1,15 @@
 class MomsController < ApplicationController
 
+before_action(:authenticate_mom!, :only => [:new, :edit, :update, :destroy])
+
+  before_action :someone_must_be_signed_in, :only => [:index]
+
+  def someone_must_be_signed_in
+      unless mom_signed_in? || company_signed_in?
+        redirect_to root_url, :notice => "You must be signed in to view moms."
+      end
+  end
+
   def index
     @moms = Mom.all
   end

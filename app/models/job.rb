@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
 
 	belongs_to :company
 
-	has_many :applications
+	has_many :applications, :dependent => :destroy
 
 	has_many :moms, :through => :applications
 
