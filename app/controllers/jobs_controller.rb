@@ -1,13 +1,24 @@
 class JobsController < ApplicationController
 
-  def index
-    @jobs = Job.all
+  before_action(:find_job, :only => [:show, :edit, :update, :destroy])
+
+
+  def find_job
+    @job = Job.find(params[:id])
   end
 
+  def index
+    @jobs = current_company.jobs
+    
+    # if company_signed_in?
+    #   @jobs = current_company.jobs
+    # else
+    #   @jobs = Jobs.all
+    
+    end
+  
   def show
-    @job = Job.find_by(id: params[:id])
-    #@application = Application.new
-    #@application.mom_id = current_mom.id
+    find_job
   end
 
   def new
@@ -35,11 +46,11 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find_by(id: params[:id])
+    find_job
   end
 
   def update
-    @job = Job.find_by(id: params[:id])
+    find_job
     @job.company_id = params[:company_id]
     @job.title = params[:title]
     @job.industry = params[:industry]
@@ -61,7 +72,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find_by(id: params[:id])
+    find_job
     @job.destroy
 
     redirect_to jobs_url, notice: "Job deleted."
