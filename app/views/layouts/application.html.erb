@@ -42,20 +42,15 @@
         <% if company_signed_in? %>
           <li><%= link_to current_company.email, edit_company_registration_path %></li>
           <li><%= link_to "Logout", destroy_company_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign up", new_company_registration_path %></li>
-          <li><%= link_to "Login", new_company_session_path %></li>
-        <% end %>        
-
-        <li><%= link_to "Moms", moms_url %></li>
-        <% if mom_signed_in? %>
+        <% elsif mom_signed_in? %>
           <li><%= link_to current_mom.email, edit_mom_registration_path %></li>
           <li><%= link_to "Logout", destroy_mom_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "Sign up", new_mom_registration_path %></li>
-          <li><%= link_to "Login", new_mom_session_path %></li>
+          <li><%= link_to "Sign up as Company", new_company_registration_path %></li>
+          <li><%= link_to "Sign up as Mom", new_mom_registration_path %></li>
+          <li><%= link_to "Login as Company", new_company_session_path %></li>
+          <li><%= link_to "Login as Mom", new_mom_session_path %></li>
         <% end %>
-
         <li><%= link_to "Jobs", jobs_url %></li>
 
 

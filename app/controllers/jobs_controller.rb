@@ -1,14 +1,16 @@
 class JobsController < ApplicationController
 
   before_action(:find_job, :only => [:show, :edit, :update, :destroy])
-
+  before_action(:authenticate_company!, :only => [:create, :edit, :update, :destroy])
 
   def find_job
     @job = Job.find(params[:id])
   end
 
   def index
-    @jobs = current_company.jobs
+    @jobs = Job.all
+
+    #@jobs = current_company.jobs
     
     # if company_signed_in?
     #   @jobs = current_company.jobs
