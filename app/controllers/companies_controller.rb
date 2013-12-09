@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
 
+  before_action(:authenticate_company!, :only => [:new, :edit, :update, :destroy])
+
   def index
     @companies = Company.all
   end

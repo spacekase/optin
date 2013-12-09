@@ -1,10 +1,10 @@
 <div class="page-header">
-  <h1>Job #<%= @job.id %></h1>
+  <h1><%= @job.title %></h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt>Company</dt>
-  <dd><%= @job.company_id %></dd>
+  <dd><%= @job.company.name %></dd>
 
   <dt>Title</dt>
   <dd><%= @job.title %></dd>
@@ -38,6 +38,8 @@
 
 </dl>
  
+
+
 <%= form_tag(applications_url, method: 'post', class: 'form-horizontal') do %>
 
   <%= hidden_field_tag :job_id, @job.id %>  

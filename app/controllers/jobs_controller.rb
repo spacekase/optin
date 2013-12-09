@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   before_action(:find_job, :only => [:show, :edit, :update, :destroy])
-  before_action(:authenticate_company!, :only => [:create, :edit, :update, :destroy])
+  before_action(:authenticate_company!, :only => [:new, :edit, :update, :destroy])
 
   def find_job
     @job = Job.find(params[:id])

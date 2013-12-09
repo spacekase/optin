@@ -1,5 +1,7 @@
 class ApplicationsController < ApplicationController
 
+before_action(:authenticate_mom!, :only => [:new, :edit, :create, :update, :destroy])
+
   def index
     @applications = Application.all
   end
