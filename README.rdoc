@@ -19,6 +19,25 @@ Kasey.lundquist2@gmail.com
 banana07
 
 
+USER MVP STORIES:
+
+As a Company, I should be able to:
+- Sign up, in, and out
+- Create, view, edit, and delete my company profile information
+- Create, view, edit, and delete a job
+- View Mom profiles
+- View Company profiles
+- View applications to jobs
+
+As a Mom, I should be able to:
+- Sign up, in, and out
+- Create, view, edit, and delete my profile
+- View Company profiles
+- View and apply to job postings
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
