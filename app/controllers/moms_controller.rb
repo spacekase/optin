@@ -1,8 +1,15 @@
 class MomsController < ApplicationController
 
-before_action(:authenticate_mom!, :only => [:new, :edit, :update, :destroy])
+  before_action(:current_mom_must_be_the_mom, :only => [:edit, :update, :destroy])
 
   before_action :someone_must_be_signed_in, :only => [:index]
+
+  def current_mom_must_be_the_mom
+    @mom = Mom.find_by(id: params[:id])
+    unless @mom == current_mom
+      redirect_to :back, :notice => "Not authorized for that."
+    end
+  end
 
   def someone_must_be_signed_in
       unless mom_signed_in? || company_signed_in?

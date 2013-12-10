@@ -2,7 +2,16 @@ class CompaniesController < ApplicationController
 
   before_action(:authenticate_company!, :only => [:new, :edit, :update, :destroy])
 
+  before_action(:current_company_must_be_the_company, :only => [:edit, :update, :destroy])
+
   before_action :someone_must_be_signed_in, :only => [:index]
+
+  def current_company_must_be_the_company
+    @company = Company.find_by(id: params[:id])
+    unless @company == current_company
+      redirect_to :back, :notice => "Not authorized for that."
+    end
+  end
 
   def someone_must_be_signed_in
       unless mom_signed_in? || company_signed_in?

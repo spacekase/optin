@@ -45,7 +45,6 @@ class JobsController < ApplicationController
     @job.start_date = params[:start_date]
     @job.end_date = params[:end_date]
     @job.hours_per_week = params[:hours_per_week]
-    @job.status = params[:status]
     @job.company_id = current_company.id
 
     if @job.save
@@ -71,7 +70,6 @@ class JobsController < ApplicationController
     @job.start_date = params[:start_date]
     @job.end_date = params[:end_date]
     @job.hours_per_week = params[:hours_per_week]
-    @job.status = params[:status]
     @job.company_id = current_company.id
 
     if @job.save

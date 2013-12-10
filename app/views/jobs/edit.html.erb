@@ -49,14 +49,14 @@
   <div class="form-group">
     <%= label_tag :start_date, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :start_date, @job.start_date, class: 'form-control' %>
+      <%= date_field_tag :start_date, @job.start_date, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :end_date, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :end_date, @job.end_date, class: 'form-control' %>
+      <%= date_field_tag :end_date, @job.end_date, class: 'form-control' %>
     </div>
   </div>
 

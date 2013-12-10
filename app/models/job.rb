@@ -13,5 +13,6 @@ class Job < ActiveRecord::Base
 	validates :budget, :presence => true, :numericality =>true
 	validates :description, :presence => true
 	validates :location, :presence => true
+	validates :hours_per_week, :presence => true, :numericality =>true
 
 end
