@@ -1,5 +1,24 @@
 == README
 
+The 4 logins/passwords you can use to test the app are the following:
+
+Company 1:
+srachmiel2014@kellogg.northwestern.edu
+rachmiel2014
+
+Company 2:
+klundquist2014@kellogg.northwestern.edu
+banana07
+
+Mom 1:
+Kasey.lundquist@gmail.com
+banana07
+
+Mom 2:
+Kasey.lundquist2@gmail.com
+banana07
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
